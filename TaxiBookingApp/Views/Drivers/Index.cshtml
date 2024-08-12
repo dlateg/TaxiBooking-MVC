@@ -1,0 +1,36 @@
+﻿@model IEnumerable<TaxiBookingApp.Models.Driver>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Drivers</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>VehicleId</th>
+            <th>Latitude</th>
+            <th>Longitude</th>
+            <th>Place</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.VehicleId</td>
+                <td>@item.Latitude</td>
+                <td>@item.Longitude</td>
+                <td>@item.Place</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="@Url.Action("Map", "Drivers")" class="btn btn-primary">View Map</a>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>

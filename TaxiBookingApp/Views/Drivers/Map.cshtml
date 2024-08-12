@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Map";
+}
+
+<h1>Drivers Map</h1>
+
+<div id="map" style="height: 500px; width: 100%;"></div>
+
+<input type="hidden" id="vehicles-data" value='@Html.Raw(Json.Serialize(Model))'>
+<input type="hidden" id="image-url" value="@Url.Content("~/Images/car.png")">
+<a href="@Url.Action("bookingForm", "Drivers")" class="btn btn-primary">Book</a>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZwtL-IhwQQKQkkVrIjeZuTkQoQ6NjhtQ&callback=initMap" async defer></script>
+<script src="~/js/map.js"></script>
