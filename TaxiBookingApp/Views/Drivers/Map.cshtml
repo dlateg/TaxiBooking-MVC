@@ -9,5 +9,5 @@
 <input type="hidden" id="vehicles-data" value='@Html.Raw(Json.Serialize(Model))'>
 <input type="hidden" id="image-url" value="@Url.Content("~/Images/car.png")">
 <a href="@Url.Action("bookingForm", "Drivers")" class="btn btn-primary">Book</a>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZwtL-IhwQQKQkkVrIjeZuTkQoQ6NjhtQ&callback=initMap" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=API_KEY&callback=initMap" async defer></script>
 <script src="~/js/map.js"></script>
