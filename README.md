@@ -10,3 +10,7 @@ TODO:
 3. Add a booked trips history
 
 # Quick demo of the app 
+
+
+https://github.com/user-attachments/assets/97e7fad6-123c-463f-9d0d-d1dbdc2a629a
+
