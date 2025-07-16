@@ -47,7 +47,7 @@ function calculateAndDisplayRoute() {
     new google.maps.Marker({
         position: { lat: startLat, lng: startLong },
         map: map,
-        icon: image,
+        icon: image
     });
 }
 

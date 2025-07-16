@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using TaxiBookingApp.Data;
+using TaxiBookingApp.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,9 +9,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
-
-// Add other services here
-
+ 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

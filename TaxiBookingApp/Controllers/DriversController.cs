@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using System.Device.Location;
 using TaxiBookingApp.Data;
@@ -7,16 +8,22 @@ using TaxiBookingApp.Models;
 
 namespace TaxiBookingApp.Controllers
 {
+    
     public class DriversController : Controller
 
     {
 
         private readonly ApplicationDbContext _context;
-
-        public DriversController(ApplicationDbContext context)
+        private readonly IConfiguration _configuration;
+        private readonly ILogger<DriversController> _logger;
+        public DriversController(ApplicationDbContext context, ILogger<DriversController> logger, IConfiguration configuration)
         {
             _context = context;
+            _logger = logger;
+            _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
         }
+
+
 
         public async Task<IActionResult> Index()
         {
@@ -40,6 +47,10 @@ namespace TaxiBookingApp.Controllers
             try
             {
                 ViewBag.Image = Url.Content("~/Images/car.png");
+                var ApiKey = _configuration["ApiKeys:GoogleMaps"];
+
+                // Pass the value to the view using ViewData
+                ViewData["ApiKey"] = ApiKey;
                 var drivers = await _context.Drivers.ToListAsync();
                 return View(drivers);
             }
@@ -71,7 +82,12 @@ namespace TaxiBookingApp.Controllers
                 ViewBag.Latitude = latitude;
                 ViewBag.Longitude = longitude;
                 ViewBag.NearestDriver_json = nearestDriverJson;
-                
+
+                var ApiKey = _configuration["ApiKeys:GoogleMaps"];
+
+                // Pass the value to the view using ViewData
+                ViewData["ApiKey"] = ApiKey;
+
 
                 return View();
             }
