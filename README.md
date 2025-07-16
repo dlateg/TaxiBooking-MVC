@@ -3,6 +3,7 @@ A web app inspired by uber that stores vehicle data in the db. User enters their
 
 Steps for running:
 1. Clone repository and add an appsettings.json similar to below
+   
 {
   "AllowedHosts": "*",
   "ConnectionStrings": {
@@ -19,6 +20,7 @@ Steps for running:
     "GoogleMaps": "YOURAPIKEY"
   }
 }
+
 TODO:
 1. Add authentication 
 2. Add a booked trips history
