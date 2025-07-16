@@ -2,8 +2,23 @@
 A web app inspired by uber that stores vehicle data in the db. User enters their location and the nearest vehicle to user's location is displayed on the map.
 
 Steps for running:
-1. Clone repository and change API_KEY in the Drivers/Views/Map.cshtml and Drivers/Views/Book.cshtml files to your google api key 
-
+1. Clone repository and add an appsettings.json similar to below
+{
+  "AllowedHosts": "*",
+  "ConnectionStrings": {
+    "DefaultConnection": "Data Source=drivers.db"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning",
+      "Microsoft.Hosting.Lifetime": "Information"
+    }
+  },
+  "ApiKeys": {
+    "GoogleMaps": "YOURAPIKEY"
+  }
+}
 TODO:
 1. Add authentication 
 2. Add a booked trips history
