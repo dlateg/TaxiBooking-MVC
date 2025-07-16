@@ -5,9 +5,8 @@ Steps for running:
 1. Clone repository and change API_KEY in the Drivers/Views/Map.cshtml and Drivers/Views/Book.cshtml files to your google api key 
 
 TODO:
-1. Fetch api key from config file
-2. Add authentication 
-3. Add a booked trips history
+1. Add authentication 
+2. Add a booked trips history
 
 # Quick demo of the app 
 
